@@ -13,6 +13,7 @@ import SwiftUI
 struct RootView: View {
     
     @EnvironmentObject var foodListViewModel: FoodListViewModel
+    @EnvironmentObject var twoColumnViewModel: TwoColumnViewModel
     
     @State private var selection = 0
     
@@ -20,7 +21,7 @@ struct RootView: View {
         TabView {
             FoodListView()
                 .environmentObject(foodListViewModel)
-                .tag(0)
+                .tag(1)
                 .tabItem {
                     VStack {
                         Text("Foods")
@@ -28,10 +29,19 @@ struct RootView: View {
                     }
                 }
             AboutView()
-                .tag(1)
+                .tag(2)
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("About")
+                }
+            TwoColumnView()
+                .environmentObject(twoColumnViewModel)
+                .tag(0)
+                .tabItem {
+                    VStack {
+                        Text("TwoColumns")
+                        Image(systemName: "flame.fill")
+                    }
                 }
         }
     }

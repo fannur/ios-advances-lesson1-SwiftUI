@@ -15,6 +15,8 @@
 		D430B057240830420008FB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D430B055240830420008FB4F /* LaunchScreen.storyboard */; };
 		D430B060240830EC0008FB4F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D430B05F240830EC0008FB4F /* Alamofire */; };
 		D430B06224083A840008FB4F /* FoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D430B06124083A840008FB4F /* FoodListView.swift */; };
+		D43FF2302411781100B9FC26 /* TwoColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FF22F2411781100B9FC26 /* TwoColumnView.swift */; };
+		D43FF2322411868400B9FC26 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FF2312411868400B9FC26 /* ActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		D430B056240830420008FB4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D430B058240830420008FB4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D430B06124083A840008FB4F /* FoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListView.swift; sourceTree = "<group>"; };
+		D43FF22F2411781100B9FC26 /* TwoColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColumnView.swift; sourceTree = "<group>"; };
+		D43FF2312411868400B9FC26 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				D430B04C240830400008FB4F /* SceneDelegate.swift */,
 				D430B06124083A840008FB4F /* FoodListView.swift */,
 				D430B04E240830400008FB4F /* RootView.swift */,
+				D43FF22F2411781100B9FC26 /* TwoColumnView.swift */,
+				D43FF2312411868400B9FC26 /* ActivityIndicatorView.swift */,
 				D430B050240830420008FB4F /* Assets.xcassets */,
 				D430B055240830420008FB4F /* LaunchScreen.storyboard */,
 				D430B058240830420008FB4F /* Info.plist */,
@@ -158,9 +164,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D430B06224083A840008FB4F /* FoodListView.swift in Sources */,
+				D43FF2302411781100B9FC26 /* TwoColumnView.swift in Sources */,
 				D430B04B240830400008FB4F /* AppDelegate.swift in Sources */,
 				D430B04D240830400008FB4F /* SceneDelegate.swift in Sources */,
 				D430B04F240830400008FB4F /* RootView.swift in Sources */,
+				D43FF2322411868400B9FC26 /* ActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

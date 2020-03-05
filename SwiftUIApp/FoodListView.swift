@@ -18,10 +18,23 @@ final class FoodListViewModel: ObservableObject {
     
     @Published private(set) var filterButtonName = "Switch Faves"
     
-    @Published private(set) var foods = [Food(name: "Strawberry", isFav: true),
-                                         Food(name: "Cheese", isFav: false),
-                                         Food(name: "Apple", isFav: false),
-                                         Food(name: "Tomato", isFav: true)]
+    @Published private(set) var foods = [Food]()
+    
+    @Published private(set) var isLoading = false
+    init() {
+        loadFromServer()
+    }
+    
+    func loadFromServer() {
+        isLoading = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.foods = [Food(name: "Strawberry", isFav: true),
+                         Food(name: "Cheese", isFav: false),
+                         Food(name: "Apple", isFav: false),
+                         Food(name: "Tomato", isFav: true)]
+            self.isLoading = false
+        }
+    }
 }
 
 struct FilterView: View {
@@ -51,19 +64,23 @@ struct FoodListView: View {
     
         var body: some View {
             NavigationView {
-                List {
-                    FilterView(favedShowed: $favedShowed).environmentObject(viewModel)
-                    ForEach(viewModel.foods) { food in
-                        if self.favedShowed == false || food.isFav  {
-                            // ROW
-                            NavigationLink(destination: FoodView()) {
-                                Text(food.name)
+                if viewModel.isLoading {
+                    ActivityIndicatorView()
+                    //Text("Loading...")
+                } else {
+                    List {
+                        FilterView(favedShowed: $favedShowed).environmentObject(viewModel)
+                        ForEach(viewModel.foods) { food in
+                            if self.favedShowed == false || food.isFav  {
+                                // ROW
+                                NavigationLink(destination: FoodView()) {
+                                    Text(food.name)
+                                }
                             }
                         }
-                    }
+                    }.navigationBarTitle("Foods")
                 }
             } // NavigationView
-            .padding(.top, 44)
         }
 }
 
