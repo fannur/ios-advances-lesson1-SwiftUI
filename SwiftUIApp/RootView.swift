@@ -8,20 +8,30 @@
 
 import SwiftUI
 
-
+enum Tabs: Hashable {
+    case first
+    case foods
+    case about
+    case twoColumns
+}
 
 struct RootView: View {
     
     @EnvironmentObject var foodListViewModel: FoodListViewModel
     @EnvironmentObject var twoColumnViewModel: TwoColumnViewModel
-    
-    @State private var selection = 0
+    @EnvironmentObject var viewModel: RootViewModel
     
     var body: some View {
-        TabView {
+        TabView(selection: $viewModel.currentTab) {
+            FirstTabView()
+                .tag(Tabs.first)
+                .tabItem {
+                    Image(systemName: "triangle.fill")
+                    Text("First")
+                }
             FoodListView()
-                .environmentObject(foodListViewModel)
-                .tag(1)
+                //.environmentObject(foodListViewModel)
+                .tag(Tabs.foods)
                 .tabItem {
                     VStack {
                         Text("Foods")
@@ -29,69 +39,26 @@ struct RootView: View {
                     }
                 }
             AboutView()
-                .tag(2)
+                .tag(Tabs.about)
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("About")
                 }
             TwoColumnView()
-                .environmentObject(twoColumnViewModel)
-                .tag(0)
+                //.environmentObject(twoColumnViewModel)
+                .tag(Tabs.twoColumns)
                 .tabItem {
                     VStack {
                         Text("TwoColumns")
-                        Image(systemName: "flame.fill")
+                        Image(systemName: "square.fill")
                     }
                 }
         }
     }
-    
-
 }
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         RootView()
-    }
-}
-
-// MARK: - Views
-
-struct AboutView: View {
-    
-    @State var aboutShowed: Bool = false
-    
-    var body: some View {
-        VStack {
-            Text("About App")
-                .simultaneousGesture(TapGesture().onEnded {
-                    self.aboutShowed.toggle()
-                })
-        }
-        .sheet(isPresented: $aboutShowed, onDismiss: { print("Modal closed") }) {
-            AboutViewModal()
-        }
-    }
-}
-
-struct AboutViewModal: View {
-    
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
-    var body: some View {
-        VStack {
-            Spacer()
-            Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Text("Close")
-            }
-            Spacer()
-            Image(systemName: "tortoise.fill")
-                .foregroundColor(.red)
-                .font(.largeTitle)
-            Spacer()
-            Spacer()
-        }
     }
 }

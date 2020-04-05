@@ -23,7 +23,6 @@ final class TwoColumnViewModel: ObservableObject {
         print("//")
         print("init \(items)")
 
-        
     }
 }
 

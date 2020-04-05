@@ -17,6 +17,13 @@
 		D430B06224083A840008FB4F /* FoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D430B06124083A840008FB4F /* FoodListView.swift */; };
 		D43FF2302411781100B9FC26 /* TwoColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FF22F2411781100B9FC26 /* TwoColumnView.swift */; };
 		D43FF2322411868400B9FC26 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43FF2312411868400B9FC26 /* ActivityIndicatorView.swift */; };
+		D44017CC2438D77B00E67EC6 /* Todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = D44017CB2438D77B00E67EC6 /* Todo.txt */; };
+		D44017CE2438DC6100E67EC6 /* FirstTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44017CD2438DC6100E67EC6 /* FirstTabView.swift */; };
+		D44017D1243A6DD400E67EC6 /* FoodListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44017D0243A6DD400E67EC6 /* FoodListViewModel.swift */; };
+		D44017D3243A6E1200E67EC6 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44017D2243A6E1200E67EC6 /* Food.swift */; };
+		D44017D5243A6E3400E67EC6 /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44017D4243A6E3400E67EC6 /* FoodView.swift */; };
+		D44017D7243A6FD500E67EC6 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44017D6243A6FD500E67EC6 /* AboutView.swift */; };
+		D44017DA243A70E800E67EC6 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44017D9243A70E800E67EC6 /* RootViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +38,13 @@
 		D430B06124083A840008FB4F /* FoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListView.swift; sourceTree = "<group>"; };
 		D43FF22F2411781100B9FC26 /* TwoColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColumnView.swift; sourceTree = "<group>"; };
 		D43FF2312411868400B9FC26 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		D44017CB2438D77B00E67EC6 /* Todo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Todo.txt; sourceTree = "<group>"; };
+		D44017CD2438DC6100E67EC6 /* FirstTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabView.swift; sourceTree = "<group>"; };
+		D44017D0243A6DD400E67EC6 /* FoodListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListViewModel.swift; sourceTree = "<group>"; };
+		D44017D2243A6E1200E67EC6 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		D44017D4243A6E3400E67EC6 /* FoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodView.swift; sourceTree = "<group>"; };
+		D44017D6243A6FD500E67EC6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		D44017D9243A70E800E67EC6 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +80,17 @@
 			children = (
 				D430B04A240830400008FB4F /* AppDelegate.swift */,
 				D430B04C240830400008FB4F /* SceneDelegate.swift */,
-				D430B06124083A840008FB4F /* FoodListView.swift */,
 				D430B04E240830400008FB4F /* RootView.swift */,
+				D44017D9243A70E800E67EC6 /* RootViewModel.swift */,
+				D44017CD2438DC6100E67EC6 /* FirstTabView.swift */,
+				D44017CF243A6DA700E67EC6 /* Foods */,
 				D43FF22F2411781100B9FC26 /* TwoColumnView.swift */,
 				D43FF2312411868400B9FC26 /* ActivityIndicatorView.swift */,
+				D44017D6243A6FD500E67EC6 /* AboutView.swift */,
 				D430B050240830420008FB4F /* Assets.xcassets */,
 				D430B055240830420008FB4F /* LaunchScreen.storyboard */,
 				D430B058240830420008FB4F /* Info.plist */,
+				D44017CB2438D77B00E67EC6 /* Todo.txt */,
 				D430B052240830420008FB4F /* Preview Content */,
 			);
 			path = SwiftUIApp;
@@ -84,6 +102,17 @@
 				D430B053240830420008FB4F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D44017CF243A6DA700E67EC6 /* Foods */ = {
+			isa = PBXGroup;
+			children = (
+				D44017D2243A6E1200E67EC6 /* Food.swift */,
+				D44017D4243A6E3400E67EC6 /* FoodView.swift */,
+				D430B06124083A840008FB4F /* FoodListView.swift */,
+				D44017D0243A6DD400E67EC6 /* FoodListViewModel.swift */,
+			);
+			path = Foods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44017CC2438D77B00E67EC6 /* Todo.txt in Resources */,
 				D430B057240830420008FB4F /* LaunchScreen.storyboard in Resources */,
 				D430B054240830420008FB4F /* Preview Assets.xcassets in Resources */,
 				D430B051240830420008FB4F /* Assets.xcassets in Resources */,
@@ -165,10 +195,16 @@
 			files = (
 				D430B06224083A840008FB4F /* FoodListView.swift in Sources */,
 				D43FF2302411781100B9FC26 /* TwoColumnView.swift in Sources */,
+				D44017D7243A6FD500E67EC6 /* AboutView.swift in Sources */,
+				D44017D1243A6DD400E67EC6 /* FoodListViewModel.swift in Sources */,
 				D430B04B240830400008FB4F /* AppDelegate.swift in Sources */,
 				D430B04D240830400008FB4F /* SceneDelegate.swift in Sources */,
+				D44017D3243A6E1200E67EC6 /* Food.swift in Sources */,
+				D44017D5243A6E3400E67EC6 /* FoodView.swift in Sources */,
 				D430B04F240830400008FB4F /* RootView.swift in Sources */,
 				D43FF2322411868400B9FC26 /* ActivityIndicatorView.swift in Sources */,
+				D44017DA243A70E800E67EC6 /* RootViewModel.swift in Sources */,
+				D44017CE2438DC6100E67EC6 /* FirstTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
